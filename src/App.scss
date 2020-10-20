@@ -1,6 +1,27 @@
-
+// Main styles
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Handlee&family=Vast+Shadow&display=swap');
 
 // font-family: 'Anton', sans-serif;
 // font-family: 'Handlee', cursive;
 // font-family: 'Vast Shadow', cursive;
+
+
+//Color variables
+$c-bg:#1d1d1d;
+$c-yellow:#FD9301;
+$c-ligthBrown:#FFD195;
+$c-darkBrown:#D4804C;
+$c-red:#E04F4F;
+$c-green:#5D9B84;
+
+body{
+  background: $c-bg;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+@mixin subtitles-fontStyle {
+color:$c-darkBrown;
+font-size: 40px;
+font-family: 'Anton', sans-serif;
+}

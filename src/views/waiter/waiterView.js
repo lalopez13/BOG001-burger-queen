@@ -1,12 +1,12 @@
 import React from "react";
-
+import './waiter.scss'
 
 function waiterView() {
 
   return (
     <div>
       <div className="menu-option">
-        <nav>
+      <nav className="menu-nav">
           <ol>
             <li>BREAKFAST</li>
             <li>LUNCH</li>

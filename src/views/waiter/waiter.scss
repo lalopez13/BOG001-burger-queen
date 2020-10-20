@@ -1,0 +1,19 @@
+@import '../../App.scss';
+
+.menu-nav {
+    li {
+        @include subtitles-fontStyle;
+        display: inline;
+        padding: 10px;
+        cursor: pointer;
+        margin-right: 3px;
+        &:hover {
+            color:$c-ligthBrown;
+        }
+        &:nth-child(n+2):before {
+            content: '';
+            border-right: 1px solid white;
+            margin-right: 10px;
+        }
+    }
+}
