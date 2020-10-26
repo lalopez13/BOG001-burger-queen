@@ -20,8 +20,82 @@ body{
   width: 100vw;
   overflow: hidden;
 }
+
 @mixin subtitles-fontStyle {
 color:$c-darkBrown;
 font-size: 40px;
 font-family: 'Anton', sans-serif;
+}
+
+@mixin button-primary{
+  font-family: 'Anton', sans-serif;
+  border:none;
+  font-size: 30px;
+  color:$c-bg;
+  outline: none;
+  cursor:pointer;
+}
+
+//HEADER COMPO
+.title{
+  position: absolute;
+left: 10%;
+font-size:25px;
+font-family: Vast Shadow;
+top:-1.5%;
+color: $c-yellow;
+display:block;
+font-weight: 50;
+}
+.rol-text{
+  margin-top: -50px;
+  margin-left: 110px;
+  color: white;
+  font-weight: 5;
+  left: 0%;
+  font-family: 'Anton', sans-serif;
+}
+.logo{
+  margin-top:2%;
+  width:50px;
+}
+.header-nav{
+  width:100vw;
+  height: 15vh;
+}
+.header-item{
+  margin-left:20px;
+  height: 100px;
+}
+
+//ITEM COMP
+.item-box{
+  background-color:$c-ligthBrown;
+  color:black;
+  font-family:'Handlee', cursive;
+  width: 450px;
+  height: 65px;
+  border-radius: 10px;
+  margin-bottom:10px;
+  padding-left:10px;
+  padding-right:20px;
+  text-transform: uppercase;
+  cursor:pointer;
+  &:hover{
+      transform:translateY(-2px);
+  }
+}
+.text-left{
+  float:left;
+}
+.text-right{
+  float: right;
+}
+img.icons {
+  width: 25px;
+  cursor:pointer;
+  margin:3px;
+}
+.Orderitem-box div {
+  flex-grow: 0.5;
 }

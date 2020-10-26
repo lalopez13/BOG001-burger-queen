@@ -1,0 +1,24 @@
+@import "../../App.scss";
+
+.home-img {
+    position: absolute;
+    left: 8.5%;
+    top: 5%;
+    bottom: 16.83%;
+}
+
+.btn-init {
+    position: absolute;
+    width: 278px;
+    height: 88px;
+    left: 42%;
+    top: 500px;
+
+    button {
+        @include button-primary;
+        background-color: #5D9B84;
+        width: 150px;
+        height: 88px;
+        border-radius: 20px;
+    }
+}
