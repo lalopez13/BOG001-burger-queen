@@ -6,8 +6,12 @@ function Home() {
   return (
     <div>
       <h1>Burguer Queen</h1>
-      <Link to="/waiterOrder">
-         <Button label="START" />  
+      <Link to="/waiter">
+         <Button label="WAITER" />  
+      </Link>
+
+      <Link to="/chef">
+         <Button label="CHEF" />  
       </Link>
      
     </div>
