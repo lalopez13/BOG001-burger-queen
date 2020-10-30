@@ -6,7 +6,7 @@ function Item(props) {
 
   return (
     <div>
-    <div onClick={props.onClick} key={props.index} className="item-box">
+    <div onClick={props.onClick} className="item-box">
      <div className="text-left">
         <p className="item-name">{props.product}</p>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import PendingOrders from './PendingOrdersList.jsx'
 import DoneOrders from './DoneOrdersList'
+import Header from "../../components/header.js";
 import './chefViewStyles.scss'
 
 
@@ -22,7 +23,9 @@ const ChefView = () => {
 
 
   return(
-    <div id = 'chefViewContainer' >    
+    <div id = 'chefViewContainer' > 
+    <Header rol="Chef#" number={5}/>  
+ 
     <div id = 'pendingOption' onClick = {()=>renderPendingView()}>PENDING</div>
     <div id = 'line'></div>
     <div id = 'doneOption' onClick = {()=>renderDoneView()}>DONE</div>

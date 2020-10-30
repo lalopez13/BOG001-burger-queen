@@ -6,9 +6,10 @@ import "./home.scss";
 
 function Home() {
   return (
-    <div>
-      <h1>Burguer Queen</h1>
+    <div className="home-container">
+      
       <img className="home-img"src={bqueen} alt="home" />
+      <h1>BURGUER QUEEN</h1>
       <Link to="/rol">
       <div className="btn-init">
       <Button label="START" />  

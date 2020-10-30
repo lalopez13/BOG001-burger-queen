@@ -37,31 +37,93 @@ font-family: 'Anton', sans-serif;
 }
 
 //HEADER COMPO
-.title{
-  position: absolute;
-left: 10%;
-font-size:25px;
-font-family: Vast Shadow;
-top:-1.5%;
-color: $c-yellow;
-display:block;
-font-weight: 50;
+.header-nav{
+  width:100%;
+  display:inline-block; 
 }
-.rol-text{
-  margin-top: -50px;
-  margin-left: 110px;
-  color: white;
-  font-weight: 5;
-  left: 0%;
-  font-family: 'Anton', sans-serif;
+.header-text{
+  width:200px;
+  height:auto;
+ 
+  align-items:center;
+  .title{ 
+    position:absolute;
+    left: 10%;
+    font-size:25px;
+    font-family: Vast Shadow;
+    top:-1.5%;
+    color: $c-yellow;
+    font-weight: 50;
+  }
+    .rol-text{
+      margin-top: -50px;
+      margin-left: 110px;
+      color: white;
+      font-weight: 5;
+      font-family: 'Anton', sans-serif;
+    }
 }
+
+
+.menu{
+  margin-top:-60px;
+  padding:2px;
+  font-size:30px;
+  position:relative;
+  float: right;
+  color:white;
+  margin-right:20px;
+  cursor:pointer;
+  &:hover{
+    background-color:#31313188;
+    border-radius:2px;
+    transform:scale(1.1);
+  }
+}
+
 .logo{
+  float: left;
   margin-top:2%;
   width:50px;
+  height:auto;
+}
+.orders-alert{  
+position: absolute;
+left: 80.65%;
+right: 11.64%;
+top: 4%;
+bottom: 26.55%;
+cursor:pointer;
+
+
+  // width:100px;
+  // height:auto;
+  // margin-left:800px;
+  // transform: translateY(-80px);
+}
+
+.pending-order{
+  position: absolute;
+left: 40.07%;
+top: 2%;
+  width:20px;
+  background-color:$c-yellow;
+  border-radius:50%;
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  color:$c-bg;
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+.waiter-alert{
+  width:50px;
+  height: auto;
+  float:left;
 }
 .header-nav{
   width:100vw;
-  height: 15vh;
+  height: auto;
 }
 .header-item{
   margin-left:20px;
@@ -73,7 +135,7 @@ font-weight: 50;
   background-color:$c-ligthBrown;
   color:black;
   font-family:'Handlee', cursive;
-  width: 450px;
+  width: 410px;
   height: 65px;
   border-radius: 10px;
   margin-bottom:10px;
@@ -84,6 +146,9 @@ font-weight: 50;
   &:hover{
       transform:translateY(-2px);
   }
+}
+p.item-product {
+  width: 150px;
 }
 .text-left{
   float:left;
@@ -98,4 +163,7 @@ img.icons {
 }
 .Orderitem-box div {
   flex-grow: 0.5;
+}
+.icon-not{
+  font-size:30px;
 }

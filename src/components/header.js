@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/hamburguer.png";
+import ordersIcon from "../assets/waiter-alert.png"
 import "../App.scss"
 
 function Header(props){
@@ -16,8 +17,13 @@ function Header(props){
               {props.number}
             </p>
           </div>
-
-          <div></div>
+          <div onClick={()=>{alert('order!!!!')}} className="orders-alert">
+          <div className="pending-order">2</div>
+          <img className="waiter-alert" src={ordersIcon} alt="icon" />
+          </div>
+          <div>
+            <p onClick={()=>{alert('hola')}}className="menu">&#x2630;</p>
+          </div>
         </nav>
       </div>
     );
