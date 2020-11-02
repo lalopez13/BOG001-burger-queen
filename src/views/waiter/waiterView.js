@@ -4,30 +4,51 @@ import Item from "../../components/item.js";
 import Order from "../../components/order.js";
 import Menu from "../../data/menu.json";
 import Modal from "../modal/modal";
-import ModalContent from "../modal/modalContent.js"
+import ModalContent from "../modal/modalContent.js";
+import NotifyError from "../../components/notification";
+import { ToastContainer } from "react-toastify";
 
 function WaiterView() {
   const [menu, setMenu] = useState("Breakfast");
   const [order, setOrder] = useState([]);
   const [open, setOpen] = useState(false);
-  const [beef, setBeef] = useState("")
-  const [extra, setExtra] = useState("")
-
+  const [optionMeat, setOptionMeat] = useState("");
+  const [extras, setExtras] = useState("");
   const data = Menu.Menu;
-  console.log(data.kind);
-  console.log(beef,extra)
- 
+  console.log(optionMeat,extras);
 
+  const cancelOrder = ()=>{
+    setOrder([]);
+  }
+const addExtrasOrder=(e)=>{
+ alert("send")
+}
+  // const printMenu = (item,index, func) => {
+  //   return (
+  //     <Item
+  //       onClick={() => {
+  //         func(item);
+  //       }}
+  //       key={index}
+  //       product={item.product}
+  //       price={item.price}
+  //     />
+  //   );
+  // };
+
+  // cons modalHamburgerOptions =()=>{
+    
+  // }
 
   const addItemOrder = (item) => {
     // let productsOrder=[]
     if (item.type === "Lunch") {
-      setOpen(true)
-      console.log(item.kind)
+      setOpen(true);
+      console.log(item.kind);
       const price = item.price;
-      const product = item.product  + beef  + extra;
+      const product = item.product ;
       const key = item.id;
-      const quantity = 1 ;
+      const quantity = 1;
       console.log("mesa");
       order.push({ key, product, price, quantity });
     } else {
@@ -44,22 +65,6 @@ function WaiterView() {
   };
 
 
-  // Crear el objeto para subir a firebase
-// const OrderUser =() =>{
-//   name:
-//   table:
-//   Date:new Date().toLocaleString("es-CO"),
-//   order:order,
-//   Total:
-// }
-  //   useEffect(()=>{
-  //       fetchItems();
-  //   }, []);
-  //  const [items, setItems]= useState([]);
-  //  const fetchItems = ()=>{
-  //      const data = fetch('../data/menu.json')
-  //      const items = data.json
-  //  }
   return (
     <div>
       <div className="header-waiter">
@@ -86,7 +91,7 @@ function WaiterView() {
             {data
               .filter((sort) => sort.type.includes(menu))
               .map((item, index) => (
-                <Item 
+                <Item
                   onClick={() => {
                     addItemOrder(item);
                   }}
@@ -97,23 +102,18 @@ function WaiterView() {
               ))}
             ;
           </div>
-          <Modal open={open} 
-          close={() => setOpen(false)}>
-           <ModalContent
-            onChange={(e) => setBeef(e.target.value)}
-            AddExtra={(e) => setExtra(e.target.value) }
-           />
+          <Modal open={open} close={() => setOpen(false)}>
+            <ModalContent
+           onChange={(e) => setOptionMeat(e.target.value)}
+           AddExtra={(e) => setExtras(e.target.value)}
+           onClick={addExtrasOrder}
+            />
           </Modal>
-          
-
-     
         </div>
         <div className="menu-order">
           <Order
             order={order}
-            onClick={() => {
-              setOrder([]);
-            }}
+            onClick={()=> cancelOrder}
           />
         </div>
       </div>
