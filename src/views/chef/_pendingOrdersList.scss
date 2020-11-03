@@ -9,41 +9,31 @@ $titles1-font : 'Anton', sans-serif;
 $titles2-font : Vast Shadow;
 $content-font : Handlee;
 
-.ulPending {
-    
-    list-style: none;
-    font-size: 19px;
-    color:$green;
-    margin: 0;
-    padding: 0;    
+
+
+.ulPending{
     grid-column-start: 2;
     grid-column-end: 5;
     grid-row-start: 3;
-    grid-row-end: 10;
+    grid-row-end: 9;
+    padding: 0; 
+    margin: 0;       
 
+        .pendingItem {
+            display: flex;
+            justify-content: space-between;
+            background-color: $yellow;
+            border-radius: 10px;
+            font-family: $content-font;
+            color: $black;
+            height: 50px;
+            margin: 5px 0;
 
-    .pendingItem{
-        display: flex;
-        justify-content: space-between;
-        margin: 2px;  
-        height: fit-content; 
-        padding: 8px 10px;
-        
-        
-        background-color: $yellow;
-        border-radius: 10px;
-        font-family: $content-font;
-        color: $black;
-
-        div {
-            height: fit-content;
-            width: fit-content;
-            
-            
-          
-            
-
-        }
-    }
+            div {
+                margin: auto 5px;
+            }
+    } 
 }
+
+
 

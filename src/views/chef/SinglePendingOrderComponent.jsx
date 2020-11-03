@@ -1,32 +1,34 @@
-import React from "react";
-import UseSinglePendingOrder from './UseSinglePendingOrder'
+import React, { useContext, useState, useEffect } from "react";
+import SingleOrderContext from "./SingleOrderContext";
+import CheckboxesList from './CheckboxesList'
 
 
-const SinglePendingOrderComponent = (orderId) => {
+const SinglePendingOrderComponent = () => {
 
-    const selectedOrder = UseSinglePendingOrder(orderId);
-  
-    return(   
-
-      <div>
-        <div id = 'rectangle'></div>
-        <div>CUSTOMER</div>
-        <div>{selectedOrder.data.customer}</div>
-        <div>TABLE</div>
-        <div>Date and time of entry</div>
-        <div>CANT</div>
-        <div>PRODUCT</div>
-      </div>
-    
-
-
-       
-    )  
-  }
-  
-  
-  export default SinglePendingOrderComponent;
+  const singleOrder = useContext(SingleOrderContext);
   
   
   
+  
+ return (
+    <div className="rectangle">
+      <div className="customerTitle"> CUSTOMER: </div>
+      <div id="customerName"> {singleOrder.data.customer}</div>
+      <div className="tableTitle"> TABLE:</div>
+      <div id="tableNumber"> {singleOrder.data.table}</div>
+      <div className="dateTime">Entry:</div>
+      <div className="quantity">QUANT</div>
+      <div className="product">PRODUCT</div>
 
+              
+      <CheckboxesList />
+        
+        
+        
+      
+    </div>
+  );
+}
+
+
+export default SinglePendingOrderComponent;

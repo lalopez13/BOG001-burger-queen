@@ -1,31 +1,23 @@
 import { useEffect, useState } from "react";
-import {db} from "../../firebase.js";
+import { db } from "../../firebase.js";
 
 const UseSinglePendingOrder = (orderId) => {
-    const [order, setOrder] = useState([])
-  
-    useEffect(()=>{
-      db
-      .collection('odersprueba')
-      .doc(orderId)
-      .where('state', "==", 'pending')
+  const [order, setOrder] = useState([]);
+
+  useEffect(() => {
+    db.collection("odersprueba")
+      .doc(order)
+      .where("state", "==", "pending")
       .onSnapshot((snapshot) => {
-          
-        let singleOrder = snapshot.docs.map(doc =>  
-          ({ orderId : doc.id,
-            data :doc.data()
-          }))
-        setOrder(singleOrder)
-      })
-  
-      
-    }, [])
-  
-    return order
-  
-  }
+        let singleOrder = snapshot.docs.map((doc) => ({
+          orderId: doc.id,
+          data: doc.data(),
+        }));
+        setOrder(singleOrder);
+      });
+  }, []);
 
-  export default UseSinglePendingOrder;
+  return order;
+};
 
-
-  
+export default UseSinglePendingOrder;
