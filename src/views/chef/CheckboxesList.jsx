@@ -2,6 +2,10 @@ import React, { useContext, useState, useEffect, Fragment } from "react";
 import SingleOrderContext from "./SingleOrderContext";
 import { db } from "../../firebase.js";
 
+
+
+
+
 const Checkboxes = () => {
   //variables checked, box y orderId
 
@@ -62,6 +66,7 @@ const Checkboxes = () => {
                 key= {singleOrder.orderId + item + singleOrder.data[item].id}
                 onChange={(e) => {getCurrentData(e.target.checked, item, singleOrder.orderId)}}
               />
+              <span className = 'customCheckbox' ></span>
               
           <div className = 'productQuantity' >{singleOrder.data[item].quantity}</div>    
           <div className = 'productName' >{singleOrder.data[item].product}</div>
