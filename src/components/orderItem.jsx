@@ -23,12 +23,7 @@ function OrderItem(props) {
           src={minus}
           alt="trash"
         />
-        <img onClick={props.addItem} 
-        className="icons" 
-        src={plus} 
-        alt="trash" 
-
-        />
+        <img onClick={props.addItem} className="icons" src={plus} alt="trash" />
         <img
           onClick={props.deleteItem}
           className="icons"

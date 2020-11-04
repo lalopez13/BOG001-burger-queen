@@ -3,8 +3,8 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../App.scss";
 
-const Notify = () =>
-  toast.dark(
+export const Notify = () =>
+  toast.info(
     <p>
       <span role="img" aria-label="potato" className="icon-not">
         &#x1f35f;
@@ -22,11 +22,11 @@ const Notify = () =>
     }
   );
 
-  export const NotifyErrorInput = () =>
+export const NotifyErrorInput = () =>
   toast.error(
     <p>
       <span role="img" aria-label="alert" className="icon-not">
-      &#x1f3af;
+        &#x1f3af;
       </span>
       Please do not leave empty fields
     </p>,
@@ -41,4 +41,21 @@ const Notify = () =>
     }
   );
 
-export default Notify;
+export const NotifyErrorOrder = () =>
+  toast.error(
+    <p>
+      <span role="img" aria-label="alert" className="icon-not">
+        &#x1f4dd;
+      </span>
+      Cannot send an empty order
+    </p>,
+    {
+      position: "top-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    }
+  );

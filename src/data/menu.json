@@ -29,6 +29,7 @@
             "product": "Basic burger",
             "type": "Lunch",
             "price": 10
+            
         },
         {
             "id": "hm-02",
@@ -47,18 +48,6 @@
             "product": "Onion rings",
             "type": "Sides",
             "price": 5
-        },
-        {
-            "id": "e-01",
-            "product": "Cheese",
-            "type": "Extras",
-            "price": 1
-        },
-        {
-            "id": "e-02",
-            "product": "Egg",
-            "type": "Extras",
-            "price": 1
         },
         {
             "id": "d-01",

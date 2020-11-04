@@ -1,9 +1,10 @@
 import React, { useState, Fragment } from "react";
-import Button from "../components/primaryButton.js";
-import OrderItem from "../components/orderItem.js";
-import {NotifyErrorInput} from "../components/notification.js";
+import Button from "./primaryButton.jsx";
+import OrderItem from "./orderItem.jsx";
+import {Notify,NotifyErrorInput,NotifyErrorOrder} from "./notification.jsx";
 import { ToastContainer } from "react-toastify";
-import Input from "../components/inputs.js";
+import Input from "./inputs.jsx";
+import {db} from "../firebase.js";
 
 function Order(props) {
   const [customerName, setCustomerName] = useState("");
@@ -11,21 +12,26 @@ function Order(props) {
   // lo intente incializando el estado pero no me sirvio por eso solo lo dejo con el setState
   const [, setActualOrder] = useState(props.order);
   console.log(customerName);
+
   // array de la orden que se trae desde la vista del mesero
   const resumen = props.order;
-  console.log(resumen.id);
+ 
 
+
+  const totalCustomer = resumen.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+
+  const restartOder = () =>{
+    setCustomerName();
+    setTableNumber();
+    alert('hoool')
+  }
   const addItemQuantity = (item) => {
-    // si la encuentra buscar en el array el item actual para actualizar la propiedad de cantidad
-    // del item en el array del resumen de la orden
-    // const currentItem = resumen.find((element) => element.key === item.key);
-    // currentItem.quantity = currentItem.quantity + 1;
     item.quantity = item.quantity + 1
     setActualOrder({ ...resumen });
   };
 
   const removeItemQuantity = (item) => {
-    // const currentItem = resumen.find((element) => element.key === item.key);
     // eliminar el producto si la cant prod. es menor a 1
     if (item.quantity <= 1) {
       resumen.splice(resumen.indexOf(item), 1);
@@ -37,7 +43,6 @@ function Order(props) {
   };
 
   const deleteItem = (item) => {
-    // const currentItem = resumen.find((element) => element.key === item.key);
     resumen.splice(resumen.indexOf(item), 1);
     setActualOrder([...resumen]);
   };
@@ -49,20 +54,22 @@ function Order(props) {
       NotifyErrorInput()
     }
     else if(resumen.length === 0){
-      alert("no se puede enviar una orden vacia")
+     NotifyErrorOrder()
     }
     else{
-     alert('continue')
-      //
   // Crear el objeto para subir a firebase
-  // const OrderUser =() =>{
-  //   name: customerName,
-  //   table: tableNumber,
-  //   Date:new Date().toLocaleString("es-CO"),
-  //   order:props.order,
-//     Status : 'pending'
-  //   Total:
-  // }
+    db.collection("odersprueba").add({
+    customer: customerName,
+    table: tableNumber,
+    orderSendTime: new Date().toLocaleString("es-CO"),
+    order:props.order,
+    state : 'pending',
+    total:'$' + totalCustomer,  
+    })
+  Notify()
+    setCustomerName("");
+    setTableNumber("");
+    setActualOrder();
     }
   }
   
@@ -108,14 +115,14 @@ function Order(props) {
         <h3>
           TOTAL:$
           <span>
-            {resumen.reduce((acc, item) => acc + item.price * item.quantity, 0)}
+          {totalCustomer}
           </span>
         </h3>
       </div>
       <div className="menu-order-btns">
-        <Button onClick={props.onClick} class="cancel-btn" label="CANCEL" />
-        <Button class="send-btn" label="SEND" onClick={sendOrder} />
-        <ToastContainer />
+        <Button onClick={()=> restartOder()} class="cancel-btn" label="CANCEL" />
+        <Button class="send-btn" label="SEND" onClick={sendOrder} />        
+        <ToastContainer />     
       </div>
     </Fragment>
   );

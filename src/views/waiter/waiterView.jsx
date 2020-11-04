@@ -1,56 +1,66 @@
 import React, { useState } from "react";
-import Header from "../../components/header.js";
-import Item from "../../components/item.js";
-import Order from "../../components/order.js";
+import Header from "../../components/header.jsx";
+import Item from "../../components/item.jsx";
+import Order from "../../components/order.jsx";
 import Menu from "../../data/menu.json";
 import Modal from "../modal/modal";
-import ModalContent from "../modal/modalContent.js";
-import NotifyError from "../../components/notification";
+import ModalContent from "../modal/modalContent.jsx";
 import { ToastContainer } from "react-toastify";
 
 function WaiterView() {
   const [menu, setMenu] = useState("Breakfast");
   const [order, setOrder] = useState([]);
   const [open, setOpen] = useState(false);
-  const [optionMeat, setOptionMeat] = useState("");
-  const [extras, setExtras] = useState("");
+  // para guardar el item seleccionado
+  const [itemLunch, setItemLunch] = useState("");
   const data = Menu.Menu;
-  console.log(optionMeat,extras);
+  console.log(order);
 
-  const cancelOrder = ()=>{
-    setOrder([]);
-  }
-const addExtrasOrder=(e)=>{
- alert("send")
-}
-  // const printMenu = (item,index, func) => {
-  //   return (
-  //     <Item
-  //       onClick={() => {
-  //         func(item);
-  //       }}
-  //       key={index}
-  //       product={item.product}
-  //       price={item.price}
-  //     />
-  //   );
-  // };
+  const addExtrasOrder = (e) => {
+    //utilizar la propiedad data que le pase al boton del modal
+    //para agregarla a la orden
+    console.log(e.target.dataset.egg);
+    console.log(e.target.dataset.cheese);
+    console.log(e.target.dataset.meat);
+    console.log(itemLunch);
+    let price = itemLunch.price;
+    let product = itemLunch.product;
+    let extra = [];
+    console.log(extra.cheese);
+    let key = itemLunch.id;
+    let quantity = 1;
 
-  // cons modalHamburgerOptions =()=>{
-    
-  // }
+    if (e.target.dataset.meat !== "") {
+      product += ", " + e.target.dataset.meat;
+    }
+    if (e.target.dataset.egg === "egg") {
+      extra.push({
+        id: "e-02",
+        product: "Egg",
+      });
+      product += ", egg";
+      price++;
+    }
+    if (e.target.dataset.cheese === "cheese") {
+      extra.push({
+        id: "e-01",
+        product: "Cheese",
+      });
+      product += ", cheese";
+      price++;
+    }
+    console.log(product);
+    order.push({ key, product, price, quantity, extra });
+    setOpen(false);
+  };
 
   const addItemOrder = (item) => {
     // let productsOrder=[]
     if (item.type === "Lunch") {
       setOpen(true);
-      console.log(item.kind);
-      const price = item.price;
-      const product = item.product ;
-      const key = item.id;
-      const quantity = 1;
-      console.log("mesa");
-      order.push({ key, product, price, quantity });
+      console.log("entro hamburguesa");
+      setItemLunch(item);
+      //order.push({ key, product, price, quantity });
     } else {
       const price = item.price;
       const product = item.product;
@@ -64,13 +74,10 @@ const addExtrasOrder=(e)=>{
     setOrder([...order]);
   };
 
-
   return (
     <div>
       <div className="header-waiter">
-        <Header rol="Waiter#" number={2} />
-        <hr />
-        <hr />
+        <Header rol="Waiter#" number={3} />
       </div>
       <div className="menu-container">
         <div className="menu-option">
@@ -103,18 +110,12 @@ const addExtrasOrder=(e)=>{
             ;
           </div>
           <Modal open={open} close={() => setOpen(false)}>
-            <ModalContent
-           onChange={(e) => setOptionMeat(e.target.value)}
-           AddExtra={(e) => setExtras(e.target.value)}
-           onClick={addExtrasOrder}
-            />
+            <ModalContent onClick={(e) => addExtrasOrder(e)} />
           </Modal>
+          <ToastContainer />
         </div>
         <div className="menu-order">
-          <Order
-            order={order}
-            onClick={()=> cancelOrder}
-          />
+          <Order order={order} />
         </div>
       </div>
     </div>

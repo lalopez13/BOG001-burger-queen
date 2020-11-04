@@ -1,7 +1,7 @@
 import React from "react";
 import PendingOrders from './PendingOrdersList.jsx'
 import DoneOrders from './DoneOrdersList'
-import Header from "../../components/header.js";
+import Header from "../../components/header.jsx";
 import './chefViewStyles.scss'
 
 
