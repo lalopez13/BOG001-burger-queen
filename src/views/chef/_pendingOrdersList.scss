@@ -20,18 +20,25 @@ $content-font : Handlee;
     margin: 0;       
 
         .pendingItem {
+            &:active {
+                background-color: $green;
+            }
             display: flex;
             justify-content: space-between;
             background-color: $yellow;
             border-radius: 10px;
             font-family: $content-font;
+            font-size: 20px;
             color: $black;
             height: 50px;
             margin: 5px 0;
 
+
             div {
-                margin: auto 5px;
+                margin: auto 15px;
             }
+
+        
     } 
 }
 

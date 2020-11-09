@@ -5,7 +5,7 @@ const UseSinglePendingOrder = (orderId) => {
   const [order, setOrder] = useState([]);
 
   useEffect(() => {
-    db.collection("odersprueba")
+    db.collection("pedidos")
       .doc(order)
       .where("state", "==", "pending")
       .onSnapshot((snapshot) => {

@@ -13,7 +13,7 @@ $content-font : Handlee;
 
     grid-column-start: 1;
     grid-column-end: 21;
-    grid-row-start: 7;
+    grid-row-start: 5;
     grid-row-end: 18;
     list-style: none;
     margin: 0;
@@ -24,36 +24,38 @@ $content-font : Handlee;
     .checkboxItem {
         margin: 0;
         padding : 0;
-        display: grid;
-        grid-template-columns: 5% 6% 4% repeat(17, 5%);
-        height: 45px;
-        margin: 10px 0;
+        
+        
+        
+        
+        
+        
         
 
         .labelCheckbox {
             margin: 0;
             padding : 0;
             display: grid;
-            grid-template-columns: 5% 10% 20% 60% 5%;
-            grid-column-start: 1;
-            grid-column-end: 18; 
+            grid-template-columns: 10% 7% 30% 48% 5%;
+            
             
 
             .checkboxFigure {
-                grid-column-start: 2;
-                grid-column-end: 3;
-                opacity: 0;
+                //grid-column-start: 2;
+                //grid-column-end: 3;
+                //opacity: 0;
 
 
             }
 
             .customCheckbox {
-                grid-column-start: 2;
-                grid-column-end: 3;
+                //grid-column-start: 2;
+                //grid-column-end: 3;
                 border: solid 2px $orange;
                 height: 22px;
                 width: 22px;
                 border-radius: 5px;
+                
 
 
             }
@@ -76,7 +78,7 @@ $content-font : Handlee;
 
             .productName {
                 grid-column-start: 4;
-                grid-column-end: 5;
+                grid-column-end: 7;
                 margin: auto 0;
                 font-size: 25px;
 
@@ -86,15 +88,7 @@ $content-font : Handlee;
 
         }
 
-        .modalButton {
-            grid-column-start: 18;
-            grid-column-end: 20;            
-
-        }
-
-
-
-       
+              
         
     }
 

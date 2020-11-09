@@ -1,4 +1,4 @@
-import React, { useState , Fragment} from "react";
+import React, { useState , Fragment } from "react";
 import UseOrdersPending from "./UseOrdersPending";
 import SinglePendingOrderComponent from "./SinglePendingOrderComponent";
 import SingleOrderContext from "./SingleOrderContext.jsx";
@@ -8,6 +8,15 @@ import DefaultMessage from './DefaultMessage'
 const PendingOrders = () => {
   const currentOrdersList = UseOrdersPending();
   const [singleOrderData, setSingleOrderData] = useState();
+  const [selectedOrder, setSelectedOrder] = useState();
+
+
+  
+
+  const currentActiveOrder = (orderData) => {
+    setSingleOrderData(orderData);
+    setSelectedOrder(orderData.orderId);    
+  }
 
   return (
     
@@ -17,7 +26,8 @@ const PendingOrders = () => {
           <li
             className="pendingItem"
             key={order.orderId}
-            onClick={() => setSingleOrderData(order)}
+            style={order.orderId===selectedOrder ? {backgroundColor : '#5D9B84'} : {backgroundColor : '#FFD195'}}            
+            onClick={() => currentActiveOrder(order)}
           >
             <div> Customer: {order.data.customer} </div>
             <div> Table : {order.data.table} </div>
@@ -26,7 +36,7 @@ const PendingOrders = () => {
       </ul>
 
       
-        <SingleOrderContext.Provider value={singleOrderData}>
+        <SingleOrderContext.Provider value={[singleOrderData, setSingleOrderData]}>
           
           {singleOrderData === undefined ? <DefaultMessage /> : <Fragment><SinglePendingOrderComponent /> </Fragment>}
           
