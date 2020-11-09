@@ -5,7 +5,7 @@ const UseOrdersPending = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    db.collection("odersprueba")
+    db.collection("pedidos")
       .where("state", "==", "pending")
       .onSnapshot((snapshot) => {
         let newOrders = snapshot.docs.map((doc) => ({

@@ -5,8 +5,8 @@ const UseOrdersDone = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    db.collection("odersprueba")
-      .where("state", "==", "delivered")
+    db.collection("pedidos")
+      .where("state", "==", "prepared")
       .onSnapshot((snapshot) => {
         let newOrders = snapshot.docs.map((doc) => ({
           orderId: doc.id,
