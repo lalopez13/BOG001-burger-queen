@@ -3,19 +3,22 @@
 .menu-container {
     padding: 2px;
 }
-.menu-order-title{
-    width: 370px;
+
+.menu-order-title {
+    width: 50%;
     display: flex;
     padding: 5px;
-    margin-left: 15px;
-    h3{
+    margin-left: 25px;
+
+    h3 {
         flex-grow: 0.3;
-    color: white;
-    font-family: 'Vast Shadow', cursive;
-    font-size: 15px;
-    font-weight: 50;
+        color: white;
+        font-family: $titles2-font;
+        font-size: 15px;
+        font-weight: 50;
     }
 }
+
 .menu-option {
     position: absolute;
     width: 50%;
@@ -30,14 +33,11 @@
         display: inline;
         color: $c-darkBrown;
         font-size: 40px;
-        font-family: 'Anton', sans-serif;
-        padding: 10px;
+        font-family: $titles1-font;
+        padding: 22px;
         cursor: pointer;
         margin-right: 3px;
-
-        .active{
-            color: $c-ligthBrown; 
-        }
+        transition: color 0.4s linear 0.2s;
 
         &:hover {
             color: $c-ligthBrown;
@@ -48,44 +48,53 @@
             border-right: 1px solid white;
             margin-right: 10px;
         }
+
+        @include media(md) {
+            padding: 10px;
+        }
     }
 }
 
 .menu-order {
-    font-family: 'Anton', sans-serif;
+    font-family: $titles1-font;
     position: absolute;
-    width: 50%;
+    width: 75%;
     height: 100%;
     top: 130px;
-    left: 520px;
+    left: 52%;
     border-left: 2px solid white;
     display: block;
     float: right;
-    padding:10px;
+    padding: 10px;
 }
+
 .menu-total-order {
-    color:white;
+    color: white;
     width: 150px;
     align-items: center;
     display: flex;
     justify-content: space-around;
-    margin-left: 280px;
-    margin-bottom:0px;
-    h3{
-        font-size:25px;
+    margin-left: 41%;
+    margin-bottom: 0px;
+
+    h3 {
+        font-size: 25px;
         font-weight: 20;
     }
-    p{
-        font-size:20px;
+
+    p {
+        font-size: 20px;
         font-weight: 10;
     }
 }
+
 .title-menu {
     margin-top: -0.4px;
+    margin-right: 38%;
     text-align: center;
     color: $c-darkBrown;
     font-size: 40px;
-    font-weight: 50px;
+    font-weight: 50;
     letter-spacing: 2px;
 }
 
@@ -96,84 +105,99 @@
     height: 370px;
     // overflow-y: scroll;
 }
+
 .Orderitem-box {
     align-items: center;
     box-sizing: border-box;
     display: flex;
     margin-left: 40px;
-    .cant{
-       width:50px; 
+
+    .cant {
+        width: 50px;
     }
-    .product{
-        width:150px;
-       
+
+    .product {
+        width: 150px;
+
     }
+
     p {
         flex-grow: 0.1;
-        color:white;
-        font-family:'Handlee', cursive;
+        color: white;
+        font-family: 'Handlee', cursive;
+        font-size: 16px;
     }
 }
-.menu-inputs{
-    margin-top:-25px;
-    margin-left:30px;
-    margin-right:40px;
-    padding:10px;
+
+.menu-inputs {
+    margin-top: -25px;
+    margin-left: 30px;
+    margin-right: 40px;
+    padding: 10px;
     align-items: center;
-       .table{
-        width:40px;
-        height:20px;
+
+    .table {
+        width: 40px;
+        height: 20px;
         margin-left: 10px;
         background-color: #363636;
-        outline:none;
-        border:none;
-        color:white;
+        outline: none;
+        border: none;
+        color: white;
     }
-    .customer{
-        width:120px;
-        height:20px;
-        margin-right:70px;
-        margin-left: 10px; 
+
+    .customer {
+        width: 120px;
+        height: 20px;
+        margin-right: 70px;
+        margin-left: 10px;
         background-color: #363636;
-        outline:none;
-        border:none;
-        color:white;
-        
+        outline: none;
+        border: none;
+        color: white;
+
     }
-    
+
 }
-label{
-    color:white;
+
+label {
+    color: white;
     margin-left: -10px;
-    font-size:20px;
+    font-size: 20px;
 }
-.tab-order{
-    width:450px;
-    height:150px;
-    overflow-y:scroll;
+
+.tab-order {
+    width: 60%;
+    height: 150px;
+    overflow-y: scroll;
 }
-.menu-order-btns{
-  margin-top:-10px;
+
+.menu-order-btns {
+    width: 87%;
+    margin-top: -10px;
     display: flex;
     justify-content: space-around;
-.cancel-btn{
-    font-family: 'Anton', sans-serif;
-    color:$c-red;
-    background-color: transparent;
-    font-size:30px;
-    border:none;
-    outline:none;
-    cursor:pointer
-}
-.send-btn{
-    font-family: 'Anton', sans-serif;
-    color: #1d1d1d;
-    background-color: #5D9B84;
-    font-size: 30px;
-    border: none;
-    outline: none;
-    width: 200px; 
-    cursor: pointer;
-    border-radius:10px;
-}
+
+    .cancel-btn {
+        font-family: $titles1-font;
+        color: $c-red;
+        background-color: transparent;
+        font-size: 30px;
+        border: none;
+        outline: none;
+        cursor: pointer
+    }
+
+    .send-btn {
+        font-family: $titles1-font;
+        color: #1d1d1d;
+        background-color: #5D9B84;
+        font-size: 30px;
+        border: none;
+        outline: none;
+        width: 200px;
+        cursor: pointer;
+        margin-right: 10%;
+        border-radius: 10px;
+    }
 }

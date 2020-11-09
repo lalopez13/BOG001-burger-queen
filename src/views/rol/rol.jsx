@@ -7,7 +7,7 @@ import "./rol.scss";
 
 function Rol() {
   return (
-    <div>
+    <div className="rol-container">
       <div className="waiter-out">
         <Link to="/waiterOrder">
           <Button label="WAITER" />

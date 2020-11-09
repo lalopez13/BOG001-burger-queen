@@ -59,3 +59,21 @@ export const NotifyErrorOrder = () =>
       progress: undefined,
     }
   );
+  export const NotifyErrorMeat = () =>
+  toast.error(
+    <p>
+      <span role="img" aria-label="no-entry" className="icon-not">
+      &#x26d4;
+      </span>
+     Order canceled
+    </p>,
+    {
+      position: "top-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    }
+  );

@@ -5,73 +5,76 @@ import Order from "../../components/order.jsx";
 import Menu from "../../data/menu.json";
 import Modal from "../modal/modal";
 import ModalContent from "../modal/modalContent.jsx";
+import {NotifyErrorMeat} from "../../components/notification.jsx";
 import { ToastContainer } from "react-toastify";
 
 function WaiterView() {
   const [menu, setMenu] = useState("Breakfast");
   const [order, setOrder] = useState([]);
   const [open, setOpen] = useState(false);
-  // para guardar el item seleccionado
   const [itemLunch, setItemLunch] = useState("");
+
+  // Data from json file
   const data = Menu.Menu;
-  console.log(order);
+
+  // Unique id generator
+  const letters = "abcdefghijkmnpqrtuvwxyzABCDEFGHJKMNPQRTUVWXYZ2346789";
+  let idSuffixLunch = "";
+  for (let i = 0; i < 4; i++) {
+    idSuffixLunch += letters.charAt(Math.floor(Math.random() * letters.length));
+  }
 
   const addExtrasOrder = (e) => {
-    //utilizar la propiedad data que le pase al boton del modal
-    //para agregarla a la orden
-    console.log(e.target.dataset.egg);
-    console.log(e.target.dataset.cheese);
-    console.log(e.target.dataset.meat);
-    console.log(itemLunch);
     let price = itemLunch.price;
     let product = itemLunch.product;
-    let extra = [];
-    console.log(extra.cheese);
-    let key = itemLunch.id;
+    let key = itemLunch.id + "-" + idSuffixLunch;
     let quantity = 1;
+    let meatDefault = " meat";
 
     if (e.target.dataset.meat !== "") {
       product += ", " + e.target.dataset.meat;
     }
+    if (!e.target.dataset.meat) {
+      product += ", " + meatDefault;
+    }
     if (e.target.dataset.egg === "egg") {
-      extra.push({
-        id: "e-02",
-        product: "Egg",
-      });
       product += ", egg";
       price++;
     }
     if (e.target.dataset.cheese === "cheese") {
-      extra.push({
-        id: "e-01",
-        product: "Cheese",
-      });
       product += ", cheese";
       price++;
     }
     console.log(product);
-    order.push({ key, product, price, quantity, extra });
+    order.push({ key, product, price, quantity });
     setOpen(false);
   };
 
   const addItemOrder = (item) => {
-    // let productsOrder=[]
+    // //devuelve el índice del primer elemento de un array que cumpla con la función de prueba proporcionada. En caso contrario devuelve -1.
+    const singleItem = order.findIndex((i) => i.key === item.id);
+
     if (item.type === "Lunch") {
       setOpen(true);
       console.log("entro hamburguesa");
       setItemLunch(item);
-      //order.push({ key, product, price, quantity });
-    } else {
+    } else if (singleItem == -1) {
       const price = item.price;
       const product = item.product;
       const key = item.id;
       const quantity = 1;
-      // productsOrder.push({key, product, price, quantity})
-      order.push({ key, product, price, quantity });
+      const readyChef = false;
+      order.push({ key, product, price, quantity, readyChef });
+      setOrder([...order]);
+    } else {
+      let doubleItem = order[singleItem];
+      doubleItem = doubleItem.quantity += 1;
+      setOrder([...order]);
     }
+  };
 
-    // console.log(productsOrder)
-    setOrder([...order]);
+  const clearOrder = () => {
+    setOrder([]);
   };
 
   return (
@@ -115,7 +118,7 @@ function WaiterView() {
           <ToastContainer />
         </div>
         <div className="menu-order">
-          <Order order={order} />
+          <Order order={order} reset={clearOrder} onClick={()=> {setOrder([]);NotifyErrorMeat()}} />
         </div>
       </div>
     </div>

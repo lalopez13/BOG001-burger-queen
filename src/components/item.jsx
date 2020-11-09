@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.scss";
+import "./item.scss";
 
 function Item(props) {
   return (

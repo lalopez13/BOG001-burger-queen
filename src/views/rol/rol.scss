@@ -1,12 +1,17 @@
 @import "../../App.scss";
-
+.rol-container{
+  display:flex;
+}
 .waiter-out{
     position: absolute;
     width: 300px;
     height: 520px;
-    left: 138px;
-    top: 50px;
+    left: 20%;
+    top:10%;
     border: 2px solid white;
+    @include media(md) {
+      left: 16%;
+    }
     button{
      @include button-primary;
       position: absolute;
@@ -22,11 +27,14 @@
     position: fixed;
     width: 270px;
     height: 350px;
-    left: 155px;
-    top: 100px;
+    left: 21.2%;
+    top: 15%;
     border: 3px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 10px;
+    @include media(md) {
+      left: 17.6%;
+    }
     img{
       width:200px;
       transform: translateX(40px);
@@ -37,8 +45,8 @@
     position: absolute;
     width: 300px;
     height: 520px;
-    left: 600px;
-    top: 50px;
+    left: 60%;
+    top: 10%;
     border: 2px solid white;
     button{
       @include button-primary;
@@ -55,8 +63,8 @@
     position: fixed;
     width: 270px;
     height: 350px;
-    left: 618px;
-    top: 100px;
+    left: 61.3%;
+    top: 15%;
     border: 3px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 10px;

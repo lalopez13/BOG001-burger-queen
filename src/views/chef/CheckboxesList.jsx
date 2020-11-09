@@ -93,8 +93,3 @@ const Checkboxes = () => {
 };
 
 export default Checkboxes;
-
-
-
-
-  

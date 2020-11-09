@@ -45,8 +45,11 @@
   color:$c-bg;
   font-size: 20px;
   font-weight: 200;
+  margin-right: 5px;
 }
-
+input{
+  margin-right: 2px;
+}
 .option,
 .option-two{
   align-items: center;
@@ -57,10 +60,15 @@
   margin-bottom:5px;
 }
 .modal-btn{
-  background-color:$c-green;
-  color:$c-bg;
-  font-family: 'Anton', sans-serif;
-  outline:none;
-  border-radius: 5px;
-border:none;
+  background-color: #5D9B84;
+    color: #1d1d1d;
+    font-family: 'Anton', sans-serif;
+    outline: none;
+    border-radius: 5px;
+    font-size: 17px;
+    margin-top: 12px;
+    padding: 10px;
+    float: right;
+    width: 100px;
+    border: none;
 }
