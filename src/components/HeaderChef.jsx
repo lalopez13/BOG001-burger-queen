@@ -3,12 +3,8 @@ import logo from "../assets/hamburguer.png";
 import ordersIcon from "../assets/waiter-alert.png";
 import { Link } from "react-router-dom";
 import "./header.scss";
-import usePreparedOrdersCount from './preparedOrdersCount';
 
-function Header(props) {
-
-  const preparedOrdersCount = usePreparedOrdersCount();
- 
+function HeaderChef (props) {
   return (
     <div className="header-nav">
       <div className="header-item">
@@ -21,15 +17,9 @@ function Header(props) {
           {props.number}
         </p>
       </div>
-      <div
-        onClick={() => {
-          alert("order!!!!");
-        }}
-        className="orders-alert"
-      >
-        <div className="pending-order"> {preparedOrdersCount} </div>
-        <img className="waiter-alert" src={ordersIcon} alt="icon" />
-      </div>
+      
+        
+     
       <div>
         <nav>
           <input className="menu-checkbox" type="checkbox" id="menu" />
@@ -51,4 +41,4 @@ function Header(props) {
     </div>
   );
 }
-export default Header;
+export default HeaderChef;

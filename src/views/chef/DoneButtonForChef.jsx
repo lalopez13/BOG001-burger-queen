@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
+import React, { Fragment, useContext } from "react";
 import SingleOrderContext from "./SingleOrderContext";
 import { db } from "../../firebase.js";
 import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const DoneButtonForChef = () => {
   
   const [singleOrder, setSingleOrder] = useContext(SingleOrderContext);
+  const notify = () => toast.error("Please Check all products in the order!", {
+    position: toast.POSITION.TOP_RIGHT
+  });
   
 
   const orderStateAsPrepared = (orderIdentifier) => {
@@ -22,16 +26,23 @@ const DoneButtonForChef = () => {
       .doc(orderIdentifier)
       .update({
         state: "prepared",
+        done_time : new Date().toLocaleString("es-CO")
       })
       .then(() => {
         console.log("updated the state to prepared");
         
       });
     
+      
+      setSingleOrder();
+      
 
-      setSingleOrder()
+
+
     } else {
-      alert('debes checkear todos los productos')
+      
+      notify()
+      
     }
 
     
@@ -41,12 +52,14 @@ const DoneButtonForChef = () => {
     
 
     
-    
+    <Fragment>
     <button
       className="doneButtonForChef"
       onClick={()=>{orderStateAsPrepared(singleOrder.orderId)}}>
       DONE
     </button>
+    <ToastContainer />
+    </Fragment>
     
     
   );

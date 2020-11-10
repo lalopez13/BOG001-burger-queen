@@ -64,7 +64,7 @@ const CheckboxesList = () => {
                         key= {singleOrder.orderId + 'productInput' +product.key}
                         onChange={(e) => {getCurrentData(e.target.checked, singleOrder.data.order.indexOf(product), singleOrder.orderId)}}
                       />
-                      {/* <span className = 'customCheckbox' ></span> */}
+                      <span className = 'customCheckbox' ></span>
                       
                   <div className = 'productQuantity' >{product.quantity}</div>    
                   <div className = 'productName' >{product.product}</div>
@@ -78,50 +78,7 @@ const CheckboxesList = () => {
 
       </ul>
     </Fragment>
-    
-
-    
-      // <Fragment>
-
-      //   <ul className = 'checkBoxList'>
-      //   {Object.keys(singleOrder.data)
-      // .filter((key) => key.includes('item'))
-      // .map((item) =>{
-      //   return(
-
-          
-      //   <li
-      //   className = 'checkboxItem'
-      //   key= {singleOrder.orderId + item}>
-      //   <label className = 'labelCheckbox'>
-      //         <input
-      //           type="checkbox"
-      //           className = 'checkboxFigure'
-      //           checked = {singleOrder.data[item].readyChef}
-      //           key= {singleOrder.orderId + item + singleOrder.data[item].id}
-      //           onChange={(e) => {getCurrentData(e.target.checked, item, singleOrder.orderId)}}
-      //         />
-      //         <span className = 'customCheckbox' ></span>
-              
-      //     <div className = 'productQuantity' >{singleOrder.data[item].quantity}</div>    
-      //     <div className = 'productName' >{singleOrder.data[item].product}</div>
-      //   </label>
-        
-      //   </li>
-        
-      //   )})}
-
-
-
-
-      //   </ul>
-      // </Fragment>
-    
-  
    
-    
-
-    
     )
 };
 

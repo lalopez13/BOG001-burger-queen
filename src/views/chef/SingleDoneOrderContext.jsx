@@ -1,5 +1,5 @@
 import React from 'react'
 
-const SingleDoneOrderContext = React.createContext({customer: 'prueba'})
+const SingleDoneOrderContext = React.createContext({})
 
 export default SingleDoneOrderContext;

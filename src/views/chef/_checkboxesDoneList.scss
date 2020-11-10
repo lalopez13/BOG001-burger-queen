@@ -9,11 +9,11 @@ $titles2-font : Vast Shadow;
 $content-font : Handlee;
 
 
-.checkBoxList { 
+.checkBoxDoneList { 
 
     grid-column-start: 1;
     grid-column-end: 21;
-    grid-row-start: 5;
+    grid-row-start: 6;
     grid-row-end: 18;
     list-style: none;
     margin: 0;
@@ -50,10 +50,11 @@ $content-font : Handlee;
 
             }
 
-            .customCheckbox {
+            .customDoneCheckbox {
                 grid-column-start: 2;
                 grid-column-end: 3;
-                border: solid 2px $orange;
+                background-color: $green;
+                border: solid 2px $grey;
                 height: 22px;
                 width: 22px;
                 border-radius: 5px;
@@ -67,7 +68,7 @@ $content-font : Handlee;
                 background-color: $green;
                 border-radius: 5px;
                 opacity: 2;
-                border: 2px solid $grey;
+                border: 2px solid $green;
                 
 
             } 

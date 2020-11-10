@@ -21,6 +21,7 @@ $content-font : Handlee;
     grid-column-end: 5;
     grid-row-start: 3;
     grid-row-end: 10;
+    overflow-y: scroll;
 
 
     .doneItem{
@@ -44,4 +45,3 @@ $content-font : Handlee;
         }
     }
 }
-
