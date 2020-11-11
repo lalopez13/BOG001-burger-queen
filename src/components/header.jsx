@@ -8,7 +8,7 @@ function Header(props) {
   return (
     <div className="header-nav">
       <div className="header-item">
-        <img className="logo" src={logo} alt="logo" />
+        <img className="logo" src={logo} width="55" height="55" alt="logo" />
       </div>
       <div className="header-text">
         <h2 className="title">BQUEEN</h2>
@@ -24,7 +24,7 @@ function Header(props) {
         className="orders-alert"
       >
         <div className="pending-order">2</div>
-        <img className="waiter-alert" src={ordersIcon} alt="icon" />
+        <img className="waiter-alert" src={ordersIcon} width="50" height="50" alt="icon" />
       </div>
       <div>
         <nav>

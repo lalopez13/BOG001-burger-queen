@@ -3,12 +3,19 @@
 .menu-container {
     padding: 2px;
 }
-
+.waiter-box{
+    @include media(xs) {
+        display:none;
+        }
+}
 .menu-order-title {
     width: 50%;
     display: flex;
     padding: 5px;
     margin-left: 25px;
+    @include media(md) {
+        width: 78%;
+      }
 
     h3 {
         flex-grow: 0.3;
@@ -66,6 +73,10 @@
     display: block;
     float: right;
     padding: 10px;
+    @include media(md) {
+        width: 46%;
+        margin-right: 45%;
+      }
 }
 
 .menu-total-order {
@@ -80,6 +91,9 @@
     h3 {
         font-size: 25px;
         font-weight: 20;
+        @include media(md) {
+            margin-left: 210px;
+          }
     }
 
     p {
@@ -96,6 +110,9 @@
     font-size: 40px;
     font-weight: 50;
     letter-spacing: 2px;
+    @include media(md) {
+        margin-right: 5%;
+      }
 }
 
 .data-button-product {
@@ -170,6 +187,9 @@ label {
     width: 60%;
     height: 150px;
     overflow-y: scroll;
+    @include media(md) {
+        width: 95%;
+      }
 }
 
 .menu-order-btns {
@@ -185,7 +205,10 @@ label {
         font-size: 30px;
         border: none;
         outline: none;
-        cursor: pointer
+        cursor: pointer;
+        @include media(md) {
+            margin-left: 20px;
+          }
     }
 
     .send-btn {
@@ -199,5 +222,8 @@ label {
         cursor: pointer;
         margin-right: 10%;
         border-radius: 10px;
+        @include media(md) {
+            transform: translateX(100px);
+          }
     }
 }

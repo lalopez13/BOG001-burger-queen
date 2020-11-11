@@ -1,0 +1,24 @@
+@import '../App.scss';
+
+.device-message-container{
+    display: none;
+    .phone-message{         
+        text-align: center;
+        padding: 10px;
+        margin-left: 25%;
+        width: 400px;
+        font-family: $content-font;
+        color: white;
+        font-size: 30px;
+        font-weight: 20;
+    }
+    .phone-message-image{
+        width:400px;
+        height:auto;
+        margin:7% 0% 5% 30%;
+    }
+    @include media(xs) {
+      display:block;
+      
+        }
+}

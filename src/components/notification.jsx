@@ -59,7 +59,7 @@ export const NotifyErrorOrder = () =>
       progress: undefined,
     }
   );
-  export const NotifyErrorMeat = () =>
+  export const NotifyErrorCanceled = () =>
   toast.error(
     <p>
       <span role="img" aria-label="no-entry" className="icon-not">

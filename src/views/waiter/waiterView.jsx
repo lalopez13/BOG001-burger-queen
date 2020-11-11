@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import Header from "../../components/header.jsx";
 import Item from "../../components/item.jsx";
 import Order from "../../components/order.jsx";
+import NavigationMenu from "../../components/navigationMenu.jsx";
 import Menu from "../../data/menu.json";
 import Modal from "../modal/modal";
 import ModalContent from "../modal/modalContent.jsx";
-import {NotifyErrorMeat} from "../../components/notification.jsx";
+import { DeviceMesssagePhone } from "../../components/deviceMessage";
+import { NotifyErrorCanceled } from "../../components/notification.jsx";
 import { ToastContainer } from "react-toastify";
 
 function WaiterView() {
@@ -78,49 +80,52 @@ function WaiterView() {
   };
 
   return (
-    <div>
-      <div className="header-waiter">
-        <Header rol="Waiter#" number={3} />
-      </div>
-      <div className="menu-container">
-        <div className="menu-option">
-          <nav className="menu-nav">
-            <ol>
-              <li className="title-nav" onClick={() => setMenu("Breakfast")}>
-                BREAKFAST
-              </li>
-              <li className="title-nav" onClick={() => setMenu("Lunch")}>
-                LUNCH
-              </li>
-              <li className="title-nav" onClick={() => setMenu("Drinks")}>
-                DRINKS
-              </li>
-            </ol>
-          </nav>
-          <div className="data-button-product">
-            {data
-              .filter((sort) => sort.type.includes(menu))
-              .map((item, index) => (
-                <Item
-                  onClick={() => {
-                    addItemOrder(item);
-                  }}
-                  key={index}
-                  product={item.product}
-                  price={item.price}
-                />
-              ))}
-            ;
+    <div className="waiter-container">
+      <div className="waiter-box">
+        <div className="header-waiter">
+          <Header rol="Waiter#" number={3} />
+        </div>
+        <div className="menu-container">
+          <div className="menu-option">
+            <NavigationMenu
+              onBreakfast={() => setMenu("Breakfast")}
+              onLunch={() => setMenu("Lunch")}
+              onDrinks={() => setMenu("Drinks")}
+            />
+            <div className="data-button-product">
+              {data
+                .filter((sort) => sort.type.includes(menu))
+                .map((item, index) => (
+                  <Item
+                    onClick={() => {
+                      addItemOrder(item);
+                    }}
+                    key={index}
+                    product={item.product}
+                    price={item.price}
+                  />
+                ))}
+              ;
+            </div>
+            <Modal open={open} close={() => setOpen(false)}>
+              <ModalContent onClick={(e) => addExtrasOrder(e)} />
+            </Modal>
+            <ToastContainer />
           </div>
-          <Modal open={open} close={() => setOpen(false)}>
-            <ModalContent onClick={(e) => addExtrasOrder(e)} />
-          </Modal>
-          <ToastContainer />
-        </div>
-        <div className="menu-order">
-          <Order order={order} reset={clearOrder} onClick={()=> {setOrder([]);NotifyErrorMeat()}} />
+          <div className="menu-order">
+            <Order
+              data-testid="order"
+              order={order}
+              reset={clearOrder}
+              onClick={() => {
+                setOrder([]);
+                NotifyErrorCanceled();
+              }}
+            />
+          </div>
         </div>
       </div>
+      <DeviceMesssagePhone />
     </div>
   );
 }

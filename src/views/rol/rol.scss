@@ -2,6 +2,11 @@
 .rol-container{
   display:flex;
 }
+.rol-box{
+  @include media(xs) {
+      display:none;
+      }
+}
 .waiter-out{
     position: absolute;
     width: 300px;

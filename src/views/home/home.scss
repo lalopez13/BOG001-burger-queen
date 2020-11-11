@@ -4,6 +4,11 @@
     text-align: center;
     display: inline;
 }
+.home-box{
+    @include media(xs) {
+        display:none;
+        }
+}
 h1{
     margin-top: -180PX;
     font-family: Vast Shadow;
@@ -18,16 +23,19 @@ h1{
     margin-top:-40px;
     height: 582px;
     width: 749px;
-    transform: translateX(140px);
+    transform: translateX(10px);
 }
 
 .btn-init {
     position: absolute;
     width: 278px;
     height: 88px;
-    left: 35%;
+    left: 40%;
     top: 500px;
     margin-top:-30px;
+    @include media(md) {
+        left: 35%;
+      }
     button {
         @include button-primary;
         background-color:$c-green;
@@ -41,3 +49,5 @@ h1{
         
     }
 }
+
+
