@@ -16,7 +16,7 @@ const SinglePendingOrderComponent = () => {
   
   
  return (
-    <div className="rectangle">
+    <div className="rectangle" id='rectangleContainer' >
       <div className="customerTitle"> CUSTOMER: </div>
       <div id="customerName"> {singleOrder.data.customer}</div>
       <div className="tableTitle"> TABLE:</div>
