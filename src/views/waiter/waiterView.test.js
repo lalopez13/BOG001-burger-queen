@@ -8,6 +8,7 @@
 // })
 import React from "react";
 import Adapter from "enzyme-adapter-react-16";
+import {render, fireEvent} from '@testing-library/react';
 import { shallow, configure } from "enzyme";
 import WaiterView from "./waiterView.jsx";
 
@@ -21,4 +22,8 @@ describe("App", () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find("p").length).toEqual(2);
   });
+  it('renders correctly',()=>{
+    const{queryByTestId, queryByPlaceholder} = render(<WaiterView />)
+    expect(queryByTestId("order")).toBeTruthy()
+})
 });

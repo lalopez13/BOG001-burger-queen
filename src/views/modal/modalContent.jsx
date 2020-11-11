@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './modalContent.scss'
 
 function ModalContent(props) {
   const [optionMeat, setOptionMeat] = useState("");
