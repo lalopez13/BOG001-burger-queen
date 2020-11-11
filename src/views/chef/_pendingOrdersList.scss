@@ -21,9 +21,6 @@ $content-font : Handlee;
     overflow-y: scroll;      
 
         .pendingItem {
-            &:active {
-                background-color: $green;
-            }
             display: flex;
             justify-content: space-between;
             background-color: $yellow;
