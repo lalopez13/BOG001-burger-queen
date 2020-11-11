@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/hamburguer.png";
 import ordersIcon from "../assets/waiter-alert.png";
 import { Link } from "react-router-dom";
 import "./header.scss";
 import usePreparedOrdersCount from './preparedOrdersCount';
+import Modal from '../views/modal/modal';
+import PreparedOrdersList from '../views/chef/PreparedOrdersList';
 
 function Header(props) {
 
   const preparedOrdersCount = usePreparedOrdersCount();
+  const [open, setOpen] = useState(false);
  
   return (
     <div className="header-nav">
@@ -21,16 +24,14 @@ function Header(props) {
           {props.number}
         </p>
       </div>
-      <div
-        onClick={() => {
-          alert("order!!!!");
-        }}
-        className="orders-alert"
-      >
+      <div className="orders-alert" >
         <div className="pending-order"> {preparedOrdersCount} </div>
-        <img className="waiter-alert" src={ordersIcon} width="55" height="55" alt="icon" />
+        <img className="waiter-alert" src={ordersIcon} alt="icon" width="55" height="55" onClick = {()=>{setOpen(true)}} />
+        <Modal open={open} close={() => setOpen(false)}>
+            <PreparedOrdersList />
+        </Modal>
       </div>
-      <div>
+      <div>  
         <nav>
           <input className="menu-checkbox" type="checkbox" id="menu" />
           <label className="menu" htmlFor="menu">
