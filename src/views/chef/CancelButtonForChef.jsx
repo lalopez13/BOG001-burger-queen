@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { Fragment, useContext } from "react";
 import SingleOrderContext from "./SingleOrderContext";
 import { db } from "../../firebase.js";
-import { ToastContainer, toast } from "react-toastify";
+
+
 
 const CancelButtonForChef = () => {
   
@@ -9,8 +10,8 @@ const CancelButtonForChef = () => {
   
 
   const orderStateAsCanceled = (orderIdentifier) => {
-
-    alert('¿Está seguro que desea cancelar la orden?')
+    
+    
 
         
     db.collection("pedidos")
@@ -25,6 +26,8 @@ const CancelButtonForChef = () => {
     
 
       setSingleOrder()
+
+
     
     
   };
@@ -33,12 +36,14 @@ const CancelButtonForChef = () => {
     
 
     
-    
+    <Fragment>
     <button
       className="cancelButtonForChef"
       onClick={()=>{orderStateAsCanceled(singleOrder.orderId)}}
       
     >CANCEL</button>
+
+    </Fragment>
     
     
   );

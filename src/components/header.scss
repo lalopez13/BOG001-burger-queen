@@ -22,10 +22,13 @@
 
     .rol-text {
         margin-top: -25%;
-        margin-left: 70%;
+        margin-left: 68%;
         color: white;
         font-weight: 5;
         font-family: $titles1-font;
+        @include media(md) {
+            margin-left: 52%;
+          }
     }
 }
 
@@ -98,7 +101,7 @@ input:checked~.ul-menu {
     position: absolute;
     left: 70.65%;
     right: 11.64%;
-    top: 4%;
+    top:2%;
     bottom: 26.55%;
     cursor: pointer;
 }
@@ -106,14 +109,17 @@ input:checked~.ul-menu {
 .pending-order {
     position: absolute;
     left: 15.07%;
-    top: 2%;
+    top: 2.5%;
     width: 20px;
     background-color: $c-yellow;
     border-radius: 50%;
     text-align: center;
     font-family: $titles1-font;
     color: $c-bg;
-
+    @include media(md) {
+        top: 2%;
+        left: 17.07%;
+      }
     &:hover {
         transform: scale(1.1);
     }

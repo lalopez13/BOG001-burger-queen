@@ -19,12 +19,13 @@ const SingleDoneOrderComponent = () => {
       <div id="tableNumber"> {singleDoneOrder.data.table}</div>
       <div className='entry'>Entry:</div>
       <div className='entryDateHour'>{singleDoneOrder.data.init_time} </div>
-      <div className="quantity">QUANT</div>
-      <div className="product">PRODUCT</div>
+      <div className='prepared'>Prepared:</div>
+      <div className='doneDateHour'>{singleDoneOrder.data.done_time} </div>
+      <div className="quantityDone">QUANT</div>
+      <div className="productDone">PRODUCT</div>
 
       <CheckboxesDoneList />
 
-              
       
         
         
