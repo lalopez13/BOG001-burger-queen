@@ -3,7 +3,7 @@ import SingleOrderContext from "./SingleOrderContext";
 import { db } from "../../firebase.js";
 
 const CheckboxesList = () => {
-  const [singleOrder, setSingleOrder] = useContext(SingleOrderContext);
+  const [singleOrder,] = useContext(SingleOrderContext);
   const [box, setBox] = useState(false);
   const [productItem, setProductItem] = useState();
   const [orderIdentifier, setOrderIdentifier] = useState();

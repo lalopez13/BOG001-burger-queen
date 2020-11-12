@@ -5,7 +5,7 @@ import DoneButtonForChef from "./DoneButtonForChef";
 import CancelButtonForChef from "./CancelButtonForChef";
 
 const SinglePendingOrderComponent = () => {
-  const [singleOrder, setSingleOrder] = useContext(SingleOrderContext);
+  const [singleOrder, ] = useContext(SingleOrderContext);
 
   return (
     <div className="rectangle" id="rectangleContainer">

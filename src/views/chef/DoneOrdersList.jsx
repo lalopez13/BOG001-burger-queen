@@ -5,17 +5,28 @@ import SingleDoneOrderContext from "./SingleDoneOrderContext";
 import SingleDoneOrderComponent from "./SingleDoneOrderComponent";
 
 const DoneOrders = () => {
-  const currentOrdersList = UseOrdersDone();
+  const currentDoneOrdersList = UseOrdersDone();
   const [singleDoneOrderData, setSingleDoneOrderData] = useState();
+  const [selectedOrder, setSelectedOrder] = useState();
+
+  const currentDoneActiveOrder = (orderData) => {
+    setSingleDoneOrderData(orderData)
+    setSelectedOrder(orderData.orderId);
+  };
 
   return (
     <Fragment>
       <ul className="ulDone">
-        {currentOrdersList.map((order) => (
+        {currentDoneOrdersList.map((order) => (
           <li
             className="doneItem"
             key={order.orderId}
-            onClick={() => setSingleDoneOrderData(order)}
+            onClick={() => currentDoneActiveOrder(order) }
+            style={
+              order.orderId === selectedOrder
+                ? { backgroundColor: "#E04F4F" , border: 'solid 5px #FFD195'}
+                : { backgroundColor: "#E04F4F" }
+            }
           >
             <div> Customer: {order.data.customer} </div>{" "}
             <div> Table : {order.data.table} </div>
