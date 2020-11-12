@@ -164,7 +164,7 @@
     }
 
     .customer {
-        width: 150px;
+        width: 165px;
         height: 20px;
         margin-right: 70px;
         margin-left: 10px;
@@ -172,6 +172,9 @@
         outline: none;
         border: none;
         color: white;
+        @include media(md) {
+            width: 129px;
+          }
 
     }
 

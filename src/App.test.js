@@ -14,8 +14,6 @@ const renderWithRouter = (ui, { route = '/' } = {}) => {
 it("renders without errors", ()=>{
   render(<App />)
 })
-
-
 describe("unit-test for router", () => {
   test('landing on a rol page', () => {
     renderWithRouter(<Rol />, { route: '/rol' })
