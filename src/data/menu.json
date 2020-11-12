@@ -40,13 +40,15 @@
         {
             "id": "s-01",
             "product": "French fries",
-            "type": "Sides",
+            "type": "Lunch",
+            "subtype":"Sides",
             "price": 5
         },
         {
             "id": "s-02",
             "product": "Onion rings",
-            "type": "Sides",
+            "type": "Lunch",
+            "subtype":"Sides",
             "price": 5
         },
         {

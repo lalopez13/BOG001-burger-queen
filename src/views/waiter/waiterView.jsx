@@ -56,11 +56,12 @@ function WaiterView() {
     // //devuelve el índice del primer elemento de un array que cumpla con la función de prueba proporcionada. En caso contrario devuelve -1.
     const singleItem = order.findIndex((i) => i.key === item.id);
 
-    if (item.type === "Lunch") {
+    if (item.type === "Lunch" && item.subtype !== "Sides") {
       setOpen(true);
       console.log("entro hamburguesa");
       setItemLunch(item);
-    } else if (singleItem === -1) {
+    }
+     else if (singleItem === -1) {
       const price = item.price;
       const product = item.product;
       const key = item.id;
