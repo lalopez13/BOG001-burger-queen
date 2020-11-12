@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../assets/hamburguer.png";
-import ordersIcon from "../assets/waiter-alert.png";
 import { Link } from "react-router-dom";
 import "./header.scss";
 
