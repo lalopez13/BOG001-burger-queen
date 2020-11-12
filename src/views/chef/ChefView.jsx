@@ -35,4 +35,3 @@ const ChefView = () => {
 };
 
 export default ChefView;
-

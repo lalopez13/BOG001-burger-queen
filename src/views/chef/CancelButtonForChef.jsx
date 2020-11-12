@@ -1,51 +1,25 @@
-import React, { Fragment, useContext } from "react";
-import SingleOrderContext from "./SingleOrderContext";
-import { db } from "../../firebase.js";
+import React, { Fragment, useState } from "react";
 
-
+import Modal from "../../views/modal/modal";
+import CancelWarning from "./CancelWarning";
 
 const CancelButtonForChef = () => {
-  
-  const [singleOrder, setSingleOrder] = useContext(SingleOrderContext);
-  
-
-  const orderStateAsCanceled = (orderIdentifier) => {
-    
-    
-
-        
-    db.collection("pedidos")
-      .doc(orderIdentifier)
-      .update({
-        state: "canceled",
-      })
-      .then(() => {
-        console.log("updated the state to canceled");
-        
-      });
-    
-
-      setSingleOrder()
-
-
-    
-    
-  };
+  const [open, setOpen] = useState(false);
 
   return (
-    
-
-    
     <Fragment>
-    <button
-      className="cancelButtonForChef"
-      onClick={()=>{orderStateAsCanceled(singleOrder.orderId)}}
-      
-    >CANCEL</button>
-
+      <button
+        className="cancelButtonForChef"
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        CANCEL
+      </button>
+      <Modal open={open} close={() => setOpen(false)}>
+        <CancelWarning />
+      </Modal>
     </Fragment>
-    
-    
   );
 };
 
