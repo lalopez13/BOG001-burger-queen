@@ -34,7 +34,7 @@
 
 
 .menu {
-    margin-top: -65px;
+    margin-top: -70px;
     padding: 2px;
     font-size: 35px;
     position: relative;
@@ -99,7 +99,7 @@ input:checked~.ul-menu {
 
 .orders-alert {
     position: absolute;
-    left: 70.65%;
+    left: 78.65%;
     right: 11.64%;
     top:2%;
     bottom: 26.55%;
@@ -108,17 +108,18 @@ input:checked~.ul-menu {
 
 .pending-order {
     position: absolute;
-    left: 15.07%;
-    top: 2.5%;
-    width: 20px;
+    left: 25.07%;
+    top: 3%;
+    width: 22px;
+    height: 22px;
     background-color: $c-yellow;
     border-radius: 50%;
     text-align: center;
     font-family: $titles1-font;
     color: $c-bg;
     @include media(md) {
-        top: 2%;
-        left: 17.07%;
+        top: 2.8%;
+        left: 32.07%;
       }
     &:hover {
         transform: scale(1.1);

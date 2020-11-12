@@ -21,9 +21,9 @@ function OrderItem(props) {
           onClick={props.restItem}
           className="icons"
           src={minus}
-          alt="trash"
+          alt="minus"
         />
-        <img onClick={props.addItem} className="icons" src={plus} alt="trash" />
+        <img onClick={props.addItem} className="icons" src={plus} alt="add" />
         <img
           onClick={props.deleteItem}
           className="icons"

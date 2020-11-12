@@ -21,7 +21,6 @@ function Header(props) {
         <h2 className="title">BQUEEN</h2>
         <p className="rol-text">
           {props.rol}
-          {props.number}
         </p>
       </div>
       <div className="orders-alert" >

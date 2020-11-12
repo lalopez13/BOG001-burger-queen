@@ -60,7 +60,7 @@ function WaiterView() {
       setOpen(true);
       console.log("entro hamburguesa");
       setItemLunch(item);
-    } else if (singleItem == -1) {
+    } else if (singleItem === -1) {
       const price = item.price;
       const product = item.product;
       const key = item.id;
@@ -69,9 +69,11 @@ function WaiterView() {
       order.push({ key, product, price, quantity, readyChef });
       setOrder([...order]);
     } else {
+      
       let doubleItem = order[singleItem];
       doubleItem = doubleItem.quantity += 1;
       setOrder([...order]);
+      
     }
   };
 
@@ -83,7 +85,7 @@ function WaiterView() {
     <div className="waiter-container">
       <div className="waiter-box">
         <div className="header-waiter">
-          <Header rol="Waiter#" number={3} />
+          <Header rol="Waiter" />
         </div>
         <div className="menu-container">
           <div className="menu-option">
