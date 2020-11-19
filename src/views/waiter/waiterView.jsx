@@ -70,7 +70,7 @@ function WaiterView() {
       order.push({ key, product, price, quantity, readyChef });
       setOrder([...order]);
     } else {
-      
+      /* eslint-disable no-unused-vars */
       let doubleItem = order[singleItem];
       doubleItem = doubleItem.quantity += 1;
       setOrder([...order]);

@@ -9,12 +9,12 @@ import { db } from "../firebase.js";
 function Order(props) {
   const [customerName, setCustomerName] = useState("");
   const [tableNumber, setTableNumber] = useState("");
-  // lo intente incializando el estado pero no me sirvio por eso solo lo dejo con el setState
-  const [, setActualOrder] = useState(props.order);
+  const [actualOrder, setActualOrder] = useState([]);
 
   // array de la orden que se trae desde la vista del mesero
   const resumen = props.order;
-  console.log(resumen);
+  console.log(actualOrder);
+  console.log(resumen)
 
   const totalCustomer = resumen.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -55,7 +55,7 @@ function Order(props) {
           customer: customerName,
           table: tableNumber,
           init_time: new Date().toLocaleString("es-CO"),
-          order: props.order,
+          order: resumen,
           state: "pending",
           total: "$" + totalCustomer,
         })

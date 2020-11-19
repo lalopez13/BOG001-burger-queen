@@ -20,18 +20,10 @@ describe("App", () => {
   it("renders correctly", () => {
     shallow(<WaiterView />);
   });
-  it.skip("includes two paragraphs", () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find("p").length).toEqual(2);
+  it("includes a navbar", () => {
+    const wrapper = shallow(<WaiterView />);
+    expect(wrapper.find("nav")).toBeTruthy();
   });
 
 });
 
-// ...
-let root;
-domAct(() => {
-  testAct(() => {
-    root = create(<WaiterView />);
-  });
-});
-expect(root).toMatchSnapshot();

@@ -5,22 +5,19 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    @include media(sm) {
-    display:none;
-    }
 }
 
 .not-found-img-cont {
     .not-found-img {
-        width:200px;
+        width:65%;
         height: auto;
-        margin-top: -33%;
+        margin-top: -30%;
         float: right;
         z-index: -1000;
-
         @include media(md) {
             margin-top: -48%;
             margin-bottom: -15%;
+            width:85%;
         }
     }
 

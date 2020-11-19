@@ -10,7 +10,7 @@
     "runtime": "nodejs8"
   },
   "hosting": {
-    "public": "public",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -40,9 +40,6 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  @include media(xs) {
-   background-color: yellow;
-  }
 }
 
 @mixin subtitles-fontStyle {
