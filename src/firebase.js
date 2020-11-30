@@ -1,5 +1,5 @@
-import firebase from 'firebase/app'
-import 'firebase/firestore'
+import firebase from 'firebase'
+//import 'firebase/firestore'
 
 
 
@@ -17,7 +17,7 @@ const firebaseConfig = {
 
   firebase.initializeApp(firebaseConfig);
 
-  firebase.firestore().enablePersistence()
+  if(process.env.NODE_ENV !== 'test')firebase.firestore().enablePersistence()
   .catch(function(err) {
       if (err.code == 'failed-precondition') {
           // Multiple tabs open, persistence can only be enabled

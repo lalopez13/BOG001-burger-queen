@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { db } from "../../firebase.js";
 
-const UseSinglePendingOrder = (orderId) => {
+const UseSinglePendingOrder = () => {
   const [order, setOrder] = useState([]);
 
   useEffect(() => {
