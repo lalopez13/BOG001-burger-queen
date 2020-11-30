@@ -12,7 +12,7 @@ function Rol() {
       <div className="rol-box">
         <div className="waiter-out">
           <Link to="/waiterOrder">
-            <Button label="WAITER" id="waiter-view" />
+            <Button label="WAITER"  />
           </Link>
           <div className="waiter-inner">
             <img src={glass} alt="waiter" />
@@ -21,7 +21,7 @@ function Rol() {
         <div>
           <div className="chef-out">
             <Link to="/chefOrder">
-              <Button label="CHEF" id="chef-view"/>
+              <Button label="CHEF"/>
             </Link>
           </div>
           <div className="chef-inner">
