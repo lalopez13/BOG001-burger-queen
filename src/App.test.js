@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Rol from "./views/rol/rol.jsx";
 import NotFound from "./views/404/404.jsx";
 import App from "./App.jsx"
