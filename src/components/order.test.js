@@ -29,23 +29,23 @@ const fixtureData = [
     ],
     state: "pending",
     table: "8",
-    total: "$12",
+    total: 12,
   },
 ];
 
 beforeEach(cleanup); // clean the Dom
 
-jest.mock("../firebase", () => ({
-  firebase: {
-    firestore: jest.fn(() => {
-      collection: jest.fn(() => {
-        doc: jest.fn(() => {
-          add: jest.fn();
-        });
-      });
-    }),
-  },
-}));
+// jest.mock("../firebase", () => ({
+//   firebase: {
+//     firestore: jest.fn(() => {
+//       collection: jest.fn(() => {
+//         doc: jest.fn(() => {
+//           add: jest.fn();
+//         });
+//       });
+//     }),
+//   },
+// }));
 
 describe("Order commponent", () => {
   describe("success", () => {
