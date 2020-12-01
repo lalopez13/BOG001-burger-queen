@@ -13,7 +13,7 @@ function Home() {
       <h1>BURGUER QUEEN</h1>
       <Link to="/rol">
         <div className="btn-init">
-          <Button label="START" />
+          <Button id="start" label="START" />
         </div>
       </Link>
       </div>

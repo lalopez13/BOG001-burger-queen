@@ -69,7 +69,8 @@ function Order(props) {
   };
 
   return (
-    <Fragment>
+    <Fragment >
+    <div data-testid="order-comp">
       <h2 className="title-menu">ORDER</h2>
       <div className="menu-inputs">
         <Input
@@ -113,8 +114,9 @@ function Order(props) {
       </div>
       <div className="menu-order-btns">
         <Button onClick={props.onClick} class="cancel-btn" label="CANCEL" />
-        <Button class="send-btn" label="SEND" onClick={sendOrder} />
+        <Button data-testid="send-order" class="send-btn" label="SEND" onClick={sendOrder} />
         <ToastContainer />
+      </div>
       </div>
     </Fragment>
   );
