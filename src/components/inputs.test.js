@@ -7,22 +7,6 @@ import Input from "./inputs.jsx";
 
 configure({ adapter: new Adapter() });
 
-const orderItems = [
-  {
-    key: "b-01",
-    price: 5,
-    product: "American coffee",
-    quantity: 3,
-    readyChef: false,
-  },
-  {
-    key: "b-02",
-    price: 7,
-    product: "Coffee with milk",
-    quantity: 2,
-    readyChef: false,
-  },
-];
 const setup = () => {
   const utils = render(<Input />);
   const input = utils.getByLabelText("input-form");

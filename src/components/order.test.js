@@ -1,5 +1,6 @@
 import React from "react";
-import { cleanup, render, fireEvent } from "@testing-library/react";
+import { cleanup, render} from "@testing-library/react";
+import data from '../data/mockData.json'
 import Order from "./order";
 
 const { db } = require("../firebase.js");
@@ -7,11 +8,8 @@ const { db } = require("../firebase.js");
 
 jest.mock("firebase");
 
-const fixtureData = [
-  {
-    customer: "Marcos Aurelio",
-    init_time: "17/11/2020, 4:00:47 p.m.",
-    order: [
+const orderToKitchen = data.mockData[0];
+const orderItems = [
       {
         key: "b-01",
         price: 5,
@@ -26,11 +24,6 @@ const fixtureData = [
         quantity: 2,
         readyChef: false,
       },
-    ],
-    state: "pending",
-    table: "8",
-    total: 12,
-  },
 ];
 
 beforeEach(cleanup); // clean the Dom
@@ -48,21 +41,24 @@ beforeEach(cleanup); // clean the Dom
 // }));
 
 describe("Order commponent", () => {
-  describe("success", () => {
-    it("renders order component", () => {
-      const { queryByTestId } = render(<Order order={fixtureData} />);
-      expect(queryByTestId("order-comp")).toBeTruthy();
-    });
-    it("renders order component and accepts a click", () => {
-      const { queryByTestId } = render(<Order order={fixtureData} />);
-      expect(queryByTestId("order-comp")).toBeTruthy();
-      fireEvent.click(queryByTestId("order-comp"));
-    });
-  });
+  it("renders without errors", ()=>{
+    render(<Order order={orderItems}/>)
+  })
+  // describe("success", () => {
+  //   it("renders order component", () => {
+  //     const { queryByTestId } = render(<Order order={fixtureData} />);
+  //     expect(queryByTestId("order-comp")).toBeTruthy();
+  //   });
+  //   it("renders order component and accepts a click", () => {
+  //     const { queryByTestId } = render(<Order order={fixtureData} />);
+  //     expect(queryByTestId("order-comp")).toBeTruthy();
+  //     fireEvent.click(queryByTestId("order-comp"));
+  //   });
+  // });
   describe("testing adding data to firebase", () => {
     it("should adding order data ", (done) => {
       db.collection("pedidos")
-        .add(fixtureData)
+        .add(orderToKitchen)
         .then(() => {
           done();
         });
