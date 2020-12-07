@@ -1,6 +1,6 @@
 
-//import db from '../../firebase.js'
-const { db } = require("../../firebase.js");
+import { db } from '../../firebase.js'
+//const { db } = require("../../firebase.js");
 import UseOrdersPending from './UseOrdersPending.jsx'
 import data from '../../data/CompleteMockData.json'
 

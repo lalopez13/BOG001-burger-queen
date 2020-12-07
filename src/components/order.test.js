@@ -3,7 +3,7 @@ import { cleanup, render, fireEvent } from "@testing-library/react";
 import Order from "./order";
 
 const { db } = require("../firebase.js");
-const MockFirebase = require("firebase-mock/src/firebase");
+//const MockFirebase = require("firebase-mock/src/firebase");
 
 jest.mock("firebase");
 

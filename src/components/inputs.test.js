@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { mount, configure, shallow } from "enzyme";
+import { mount, configure } from "enzyme";
 import { render, fireEvent } from "@testing-library/react";
 import Adapter from "enzyme-adapter-react-16";
 import Input from "./inputs.jsx";
