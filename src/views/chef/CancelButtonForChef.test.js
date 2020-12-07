@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event'
 import React from 'react'
 import {db} from '../../firebase.js'
 //const { db } = require("../../firebase.js");
-import SinglePendingOrderComponent from './SinglePendingOrderComponent'
+import CancelButtonForChef from './CancelButtonForChef'
 import data from '../../data/completeMockData.json'
 import SingleOrderContext from "./SingleOrderContext";
 import '@testing-library/jest-dom/extend-expect'
@@ -27,15 +27,14 @@ afterEach(() => {
     container = null;
 });
 
-test("Muestra la lista de los detalles de la orden con su usuario", () => {
+test("Abre la ventana modal para cancelar el pedido", () => {
     act(() => {
         ReactDOM.render((
-            <SingleOrderContext.Provider value={[data.mockData[0], ()=>{}]}>
-                <SinglePendingOrderComponent />
-            </SingleOrderContext.Provider>
+            <CancelButtonForChef />
         ), container);
     });
-
-    expect(container.textContent).toBe("5American coffee1Ham and cheese sandwich1Natural fruit juice");
+    console.log(screen.getAllByRole('button'))
+    userEvent.click(screen.getAllByRole('button'))
+    expect(container.textContent).toBe("juice");
 });
 

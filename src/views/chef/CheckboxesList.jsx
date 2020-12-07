@@ -22,11 +22,13 @@ const CheckboxesList = () => {
         .set(updatedData)
         .then(() => {
           console.log("updated");
+          console.log(singleOrder.data.order[productItem])
         });
     }
   });
 
   const getCurrentData = (booleanToBox, productItemValue, orderIdValue) => {
+    console.log('ejecutando el getCurrentData')
     setBox(booleanToBox);
     setProductItem(productItemValue);
     setOrderIdentifier(orderIdValue);
