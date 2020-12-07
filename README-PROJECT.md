@@ -12,7 +12,7 @@ The high fidelity prototype was made in <a href="https://www.figma.com/file/lfEl
 
 ## :chart_with_upwards_trend: Lighthouse report 
 
-
+<img src="https://raw.githubusercontent.com/lalopez13/BOG001-burger-queen/develop/src/assets/lighthouse.png" width="500px" float="left">
 
 
 ## Objetivos de aprendizaje
