@@ -19,7 +19,6 @@ const SinglePendingOrderComponent = () => {
       <div className="product">PRODUCT</div>
 
       <CheckboxesList />
-
       <CancelButtonForChef />
       <DoneButtonForChef />
     </div>

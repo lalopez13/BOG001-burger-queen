@@ -1,7 +1,8 @@
 
+//import db from '../../firebase.js'
 const { db } = require("../../firebase.js");
 import UseOrdersPending from './UseOrdersPending.jsx'
-import data from '../../data/mockData.json'
+import data from '../../data/CompleteMockData.json'
 
 
 
@@ -9,7 +10,7 @@ import data from '../../data/mockData.json'
 jest.mock('firebase')
 
 
-console.log(data.mockData[0])
+
 
 describe('useTextField', () => {
     test('test para probar el mock ', (done)=>{
@@ -26,36 +27,7 @@ describe('useTextField', () => {
         done()
     });
 
-    expect(UseOrdersPending()).toEqual({
-      "customer" : "Antonia Santos",
-      "init_time" : "12/11/2020, 5:23:48 p.m.",
-      "order" : [
-          {
-              "key" :"b-01",
-              "price": 5,
-              "product" : "American coffee",
-              "quantity" : 5,
-              "readyChef": false
-          },
-          {
-              "key" :"b-03",
-              "price": 10,
-              "product" : "Ham and cheese sandwich",
-              "quantity" : 1,
-              "readyChef": false
-          },
-          {
-              "key" :"b-04",
-              "price": 7,
-              "product" : "Natural fruit juice",
-              "quantity" : 1,
-              "readyChef": false
-          }
-      ],
-      "state" : "pending",
-      "table": "5",
-      "total": "$42"
-  },)
+    expect(UseOrdersPending()).toEqual(data.mockData[1])
 
      
       

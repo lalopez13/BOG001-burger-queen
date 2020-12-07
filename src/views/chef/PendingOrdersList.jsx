@@ -17,7 +17,12 @@ const PendingOrders = () => {
   return (
     <Fragment>
       <ul className="ulPending">
-        {currentOrdersList.map((order) => (
+        {currentOrdersList.map((order) => 
+        
+        (
+          
+
+          
           <li
             className="pendingItem"
             key={order.orderId}
@@ -28,6 +33,7 @@ const PendingOrders = () => {
             }
             onClick={() => currentActiveOrder(order)}
           >
+            {console.log(order)}
             <div> Customer: {order.data.customer} </div>
             <div> Table : {order.data.table} </div>
           </li>
