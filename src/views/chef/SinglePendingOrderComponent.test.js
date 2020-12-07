@@ -31,6 +31,6 @@ test("Muestra la lista de los detalles de la orden con su usuario", () => {
         ), container);
     });
 
-    expect(container.textContent).toBe("5American coffee1Ham and cheese sandwich1Natural fruit juice");
+    expect(container.textContent).toBe(" CUSTOMER:  Antonia Santos TABLE: 5Entry:12/11/2020, 5:23:48 p.m. QUANTPRODUCT5American coffee1Ham and cheese sandwich1Natural fruit juiceCANCELDONE");
 });
 

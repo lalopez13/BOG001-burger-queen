@@ -26,6 +26,6 @@ test("Muestra la lista de los productos del pedido con su cantidad", () => {
         ), container);
     });
 
-    expect(container.textContent).toBe("5American coffee1Ham and cheese sandwich1Natural fruit juice");
+    expect(container.textContent).toBe("Click an order to see its details");
 });
 

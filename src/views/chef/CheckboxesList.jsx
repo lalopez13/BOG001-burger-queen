@@ -21,14 +21,14 @@ const CheckboxesList = () => {
         .doc(orderIdentifier)
         .set(updatedData)
         .then(() => {
-          console.log("updated");
-          console.log(singleOrder.data.order[productItem])
+          //console.log("updated");
+          
         });
     }
   });
 
   const getCurrentData = (booleanToBox, productItemValue, orderIdValue) => {
-    console.log('ejecutando el getCurrentData')
+    
     setBox(booleanToBox);
     setProductItem(productItemValue);
     setOrderIdentifier(orderIdValue);

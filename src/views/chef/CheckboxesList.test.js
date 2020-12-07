@@ -47,7 +47,7 @@ test("Checkboxes change on click", () => {
 
 
     return db.collection("pedidos").get().then((snapshot) => {
-        console.log(snapshot.data)
+        
         act(() => {
             ReactDOM.render((
                 <SingleOrderContext.Provider value={[snapshot.data.order1, ()=>{}]}>
@@ -57,7 +57,7 @@ test("Checkboxes change on click", () => {
         });
 
         userEvent.click(screen.getAllByRole('checkbox')[0])
-        console.log(screen.getAllByRole('checkbox')[0].checked)
+        
 
         act(() => {
             ReactDOM.render((
