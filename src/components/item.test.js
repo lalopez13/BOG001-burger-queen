@@ -1,7 +1,7 @@
 
 import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
-import { mount, configure, shallow } from "enzyme";
+import { configure } from "enzyme";
 import { act } from "react-dom/test-utils";
 import Item from "./item.jsx";
 import Adapter from "enzyme-adapter-react-16";

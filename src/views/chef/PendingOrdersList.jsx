@@ -33,7 +33,7 @@ const PendingOrders = () => {
             }
             onClick={() => currentActiveOrder(order)}
           >
-            {console.log(order)}
+            
             <div> Customer: {order.data.customer} </div>
             <div> Table : {order.data.table} </div>
           </li>

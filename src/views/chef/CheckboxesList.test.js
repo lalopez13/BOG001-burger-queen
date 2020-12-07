@@ -1,5 +1,5 @@
 
-import {waitFor , render, screen} from '@testing-library/react'
+import {screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
 import {db} from '../../firebase.js'
@@ -8,7 +8,6 @@ import CheckboxesList from './CheckboxesList'
 import data from '../../data/completeMockData.json'
 import SingleOrderContext from "./SingleOrderContext";
 import '@testing-library/jest-dom/extend-expect'
-import TestRenderer from 'react-test-renderer';
 import { act } from "react-dom/test-utils";
 import ReactDOM from 'react-dom'
 
@@ -48,7 +47,7 @@ test("Checkboxes change on click", () => {
 
 
     return db.collection("pedidos").get().then((snapshot) => {
-        console.log(snapshot.data)
+        
         act(() => {
             ReactDOM.render((
                 <SingleOrderContext.Provider value={[snapshot.data.order1, ()=>{}]}>
@@ -58,7 +57,7 @@ test("Checkboxes change on click", () => {
         });
 
         userEvent.click(screen.getAllByRole('checkbox')[0])
-        console.log(screen.getAllByRole('checkbox')[0].checked)
+        
 
         act(() => {
             ReactDOM.render((
