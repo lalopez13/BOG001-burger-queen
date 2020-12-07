@@ -35,7 +35,7 @@ test("Cambia el status de la orde a prepared", () => {
 
 
     return db.collection("pedidos").get().then((snapshot) => {
-        console.log(snapshot.data)
+        
         act(() => {
             ReactDOM.render((
                 <SingleOrderContext.Provider value={[snapshot.data.order2, ()=>{}]}>
@@ -45,7 +45,7 @@ test("Cambia el status de la orde a prepared", () => {
         });
 
         userEvent.click(screen.getAllByRole('button'))
-        console.log(screen.getAllByRole('button'))
+        
 
         expect(container.textContent).toBe("nada");
 
