@@ -75,7 +75,7 @@ A continuación puedes ver los objetivos de aprendizaje de este proyecto:
 * [x] [Eventos en React.](https://es.reactjs.org/docs/handling-events.html)
 * [x] [Listas y keys.](https://es.reactjs.org/docs/lists-and-keys.html)
 * [x] [Renderizado condicional.](https://es.reactjs.org/docs/conditional-rendering.html)
-* [x] [Elevación de estados.](https://es.reactjs.org/docs/lifting-state-up.html)
+* [ ] [Elevación de estados.](https://es.reactjs.org/docs/lifting-state-up.html)
 * [x] [`hooks`](https://es.reactjs.org/docs/hooks-intro.html)
 * [x] [`CSS` modules.](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet)
 * [x] [React Router.](https://reacttraining.com/react-router/web)
